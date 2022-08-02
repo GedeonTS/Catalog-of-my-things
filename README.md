@@ -2,8 +2,7 @@
 
 # Project Name
 
-> Description of the project.
-
+> Ruby Capstone Project
 
 ## Built With
 
