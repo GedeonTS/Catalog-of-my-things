@@ -1,6 +1,31 @@
+require_relative './Book/books_handler'
+require_relative './Book/book'
+require_relative './Label/label_handler'
+require_relative './Label/label'
+require_relative './author/author'
+require_relative './author/author_handler'
+require_relative './genre/genre'
+require_relative './genre/genre_handler'
+
 # rubocop:disable Metrics/CyclomaticComplexity
 class Main
-  def options
+  include BooksHandler
+  include LabelsHandler
+  include AuthorsHandler
+  include GenresHandler
+
+  def initialize
+    @books = load_books
+    @labels = load_labels
+    @genres = load_genres
+  end
+
+  def my_input(message)
+    print message
+    gets.chomp
+  end
+
+  def options1
     puts '1 => List all books'
     puts '2 => List all music albums'
     puts '3 => List all movies'
@@ -16,25 +41,28 @@ class Main
     puts '13 => Exit'
   end
 
-  def check(option)
-    case option
-    when 1 then p 'All books'
-    when 2 then p 'All music albums'
-    when 3 then p 'All movies'
-    when 4 then p 'All games'
-    when 5 then p 'All genres'
-    when 6 then p 'All lebels'
-    when 7 then p 'All authors'
-    when 8 then p 'All sources'
-    when 9 then p 'book added'
-    when 10 then p 'Music album added'
-    when 11 then p 'Movie added'
-    when 12 then p 'Add a game'
-    when 13
-      nil
+  def options(input)
+    case input
+    when 1
+      list_books
+    when 2
+      'list_music_albums'
+    when 3
+      'list_games'
+    when 4
+      list_genres
+    when 5
+      list_labels
+    when 6
+      list_authors
+    when 7
+      add_book
+    when 8
+      'add_music_album'
+    when 9
+      'add_game'
     else
-      puts 'Wrong value specified'
-      option
+      puts 'Please choose a valid number!'
     end
   end
 
@@ -45,11 +73,15 @@ class Main
     option = nil
     while option != 13
       puts 'Please choose an option by entrering a number: '
-      options
+      options1
       print '[Input number]: '
-      option = gets.chomp.strip.to_i
-      check(option)
-      puts
+      option = gets.chomp.strip
+
+      if option.to_i.between?(1, 13)
+        options(option.to_i)
+      else
+        puts 'Please choose a valid number!'
+      end
     end
     puts 'GOOD BYE👋'
   end
