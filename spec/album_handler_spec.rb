@@ -4,7 +4,7 @@ describe 'Music Album Class' do
   it 'should check if an object is an  instance of MusicAlbum' do
     expect(@album).to be_an_instance_of(MusicAlbum)
   end
-  
+
   before :each do
     @album = MusicAlbum.new('2022-01-01', true, true)
   end
