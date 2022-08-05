@@ -6,7 +6,7 @@ require_relative './author/author'
 require_relative './author/author_handler'
 require_relative './genre/genre_handler'
 require_relative './album/album_handler'
-require_relative './album/music_album.rb'
+require_relative './album/music_album'
 
 # rubocop:disable Metrics/CyclomaticComplexity
 class Main
@@ -37,10 +37,10 @@ class Main
     puts '[2] => List all music albums'
     puts '[3] => List all games'
     puts '[4] => List all genres'
-    puts "[5] => List all lebels"
-    puts "[6] => List all authors"
-    puts "[7] => Add a book"
-    puts "[8] => Add a music album"
+    puts '[5] => List all lebels'
+    puts '[6] => List all authors'
+    puts '[7] => Add a book'
+    puts '[8] => Add a music album'
     puts '[9] => Add a game'
     puts '[10] => Exit'
   end

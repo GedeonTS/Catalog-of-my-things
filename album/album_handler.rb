@@ -6,8 +6,8 @@ module MusicAlbumModule
   include GenreModule
 
   def list_all_music_albums(music_albums)
-    music_albums = []
     if File.exist?('./album/files/music_album.json')
+      music_albums = []
       file = File.read('./album/files/music_album.json')
       albums = JSON.parse(file)
       albums.each do |element|
@@ -39,7 +39,8 @@ module MusicAlbumModule
         file = File.read('./album/files/music_album.json')
         @albums = JSON.parse(file)
       end
-      data = {id: music_album.id, publish_date: music_album.publish_date, archived: music_album.archived, genre: music_album.genre.id, name: music_album.genre.id, on_spotify: on_spotify}
+      data = { id: music_album.id, publish_date: music_album.publish_date, archived: music_album.archived,
+               genre: music_album.genre.id, name: music_album.genre.id, on_spotify: on_spotify }
       @albums.push(data)
       File.write('./album/files/music_album.json', JSON(@albums))
       puts 'Music album created successfully ✅'

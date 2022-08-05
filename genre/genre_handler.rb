@@ -7,7 +7,7 @@ module GenreModule
       genres << Genre.new(index, option)
     end
   end
-  
+
   def list_genres(genres)
     puts 'Genres:'
     genres.each do |genre|

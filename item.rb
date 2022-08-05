@@ -14,7 +14,7 @@ class Item
     @genre = genre
     genre.items << self unless genre.items.include?(self)
   end
-  
+
   def can_be_archived?()
     current_date = Date.today
     total_years = current_date.year - @publish_date.year
