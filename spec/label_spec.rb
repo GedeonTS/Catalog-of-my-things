@@ -1,6 +1,6 @@
-require_relative '../Label/label.rb'
-require_relative '../Label/label_handler.rb'
-require_relative '../Book/book.rb'
+require_relative '../Label/label'
+require_relative '../Label/label_handler'
+require_relative '../Book/book'
 require 'yaml'
 
 describe Label do
