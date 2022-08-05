@@ -3,11 +3,16 @@ class Item
   attr_accessor :archived, :id
   attr_reader :label, :genre, :author
 
-  def initialize(publish_date, id = nil, archived: false)
+  def initialize(publish_date, archived: false, id: nil)
     @id = id || Random.rand(1..100)
     @label = label
     @publish_date = Date.parse(publish_date)
     @archived = archived
+  end
+
+  def add_genre(genre)
+    @genre = genre
+    genre.items << self unless genre.items.include?(self)
   end
 
   def can_be_archived?()
