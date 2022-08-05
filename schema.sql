@@ -11,11 +11,6 @@ CREATE TABLE label(
   name VARCHAR(30)
 );
 
-CREATE TABLE genre(
-  ID SERIAL PRIMARY KEY,
-  name VARCHAR(30)
-);
-
 CREATE TABLE book(
   ID SERIAL PRIMARY KEY,
   publish_date DATE NOT NULL,

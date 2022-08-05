@@ -42,9 +42,6 @@ module BooksHandler
     new_book.label = label
     new_book.author = author
     new_book.move_to_archive
-    # @books << new_book
-    # @labels << label
-    # @genres << genre
     store_labels(label)
     store_books(new_book)
     add_author(author)
