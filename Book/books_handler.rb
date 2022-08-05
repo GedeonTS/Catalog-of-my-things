@@ -9,7 +9,7 @@ module BooksHandler
 
     # books.each do |book|
     data << { id: book.id, publish_date: book.publish_date, publisher: book.publisher, cover_state: book.cover_state,
-              archived: book.archived, genre: book.genre, author: book.author, label: book.label }
+              archived: book.archived, author: book.author, label: book.label }
     # end
     File.write(file, JSON.generate(data))
   end
@@ -22,7 +22,6 @@ module BooksHandler
     JSON.parse(File.read(file)).each do |book|
       new_book = Book.new(book['publish_date'], book['publisher'], book['cover_state'], book['id'],
                           archived: book['archived'])
-      new_book.genre = Genre.new(book['genre'])
       new_book.author = Author.new(book['author']['first_name'], book['author']['last_name'])
       new_book.label = Label.new(book['label'])
       data << new_book
@@ -35,13 +34,11 @@ module BooksHandler
     author_name = my_input("Enter Author's name: ")
     author_family_name = my_input("Enter Author's last name: ")
     author = Author.new(author_name, author_family_name)
-    publish_date = my_input("Book\'s publish date: ")
+    publish_date = my_input("Book\'s publish date [YYYY-MM-DD]: ")
     publisher = my_input("Book\'s publisher: ")
     cover_state = my_input("Book\'s cover state [good, bad]: ")
-    genre = Genre.new(my_input("Book\'s genre: "))
     label = Label.new(my_input("Book\'s label: "))
     new_book = Book.new(publish_date, publisher, cover_state)
-    new_book.genre = genre
     new_book.label = label
     new_book.author = author
     new_book.move_to_archive
@@ -49,7 +46,6 @@ module BooksHandler
     # @labels << label
     # @genres << genre
     store_labels(label)
-    store_genres(genre)
     store_books(new_book)
     add_author(author)
     puts "The book (by #{author_family_name}) has been created successfully ✅"
