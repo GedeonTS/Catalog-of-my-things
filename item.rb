@@ -39,4 +39,9 @@ class Item
     @label = label.name
     label.items << self unless label.items.include?(self)
   end
+
+  def add_author(author)
+    @author = author.first_name
+    author.items.push(self) unless author.items.include?(self)
+  end
 end
