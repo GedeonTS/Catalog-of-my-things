@@ -7,10 +7,8 @@ require_relative './author/author_handler'
 require_relative './genre/genre_handler'
 require_relative './album/album_handler'
 require_relative './album/music_album'
-require_relative './classes/game'
-require_relative './classes/author'
-require_relative './modules/author'
-require_relative './modules/game'
+require_relative './games/game_handler'
+require_relative './games/game'
 
 # rubocop:disable Metrics/CyclomaticComplexity
 class Main
@@ -19,15 +17,12 @@ class Main
   include AuthorsHandler
   include GenreModule
   include MusicAlbumModule
-  include AuthorData
-  include GameData
-
+  include GameHandler
   def initialize
     @books = load_books
     @labels = load_labels
     @genres = []
-    @games = load_games
-    @authors = load_authors
+    @value = { games: [], authors: [] }
     @music_albums = MusicAlbum.read_file(@genres)
     add_genres(@genres)
   end
@@ -51,8 +46,7 @@ class Main
     puts '[7] => Add a book'
     puts '[8] => Add a music album'
     puts '[9] => Add a game'
-    puts '[10] => Add an author'
-    puts '[11] => Exit'
+    puts '[10] => Exit'
   end
 
   def options(input)
@@ -64,8 +58,7 @@ class Main
       # list music albums
       list_all_music_albums(@music_albums)
     when 3
-      # list_games
-      list_games
+      list_all_games(@value)
     when 4
       # list all genres
       list_genres(@genres)
@@ -82,12 +75,8 @@ class Main
       # add music album
       @music_albums << add_music_album(@genres)
     when 9
-      # add a game
-      add_game
+      add_game(@value)
     when 10
-      # add an author
-      add_author
-    when 11
       nil
     else
       puts 'Please choose a valid number!'
