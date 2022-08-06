@@ -64,7 +64,7 @@ class Main
       # list music albums
       list_all_music_albums(@music_albums)
     when 3
-      #list_games
+      # list_games
       list_games
     when 4
       # list all genres
@@ -87,7 +87,7 @@ class Main
     when 10
       # add an author
       add_author
-    when 10
+    when 11
       nil
     else
       puts 'Please choose a valid number!'
