@@ -5,6 +5,21 @@ CREATE TABLE author(
   first_name VARCHAR(30),
   last_name VARCHAR(30)
 );
+
+CREATE table games (
+  id serial primary key,
+  published_date date,
+  multiplayer varchar(255),
+  last_played_at date
+);
+
+CREATE table authors (
+  id serial primary key,
+  first_name varchar(255),
+    last_name varchar(255),
+    items int
+    CONSTRAINT fk_items FOREIGN KEY (items) REFERENCES items (id)
+);
   
 CREATE TABLE label(
   ID SERIAL PRIMARY KEY,
