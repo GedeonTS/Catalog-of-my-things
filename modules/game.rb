@@ -21,4 +21,19 @@ module GameData
     end
     File.write('./json_files/games.json', JSON.generate(data))
   end
+
+  def add_game
+    puts 'Enter multiplayer'
+    multiplayer = gets.chomp
+    puts 'Enter last_played_at(yyyy-mm-dd)'
+    last_played_at = gets.chomp
+    @games.push(Game.new(multiplayer, last_played_at))
+    save_games
+  end
+
+  def list_games
+    @games.each do |game|
+      p "multiplayer:#{game.multiplayer} last_played_at:#{game.last_played_at}"
+    end
+  end
 end
