@@ -21,13 +21,13 @@ module AuthorData
     end
     File.write('./json_files/author.json', JSON.generate(data))
   end
-  
+
   def list_authors
     @authors.each do |author|
       p "first_name:#{author.first_name} last_name:#{author.last_name}"
     end
   end
- 
+
   def add_author
     puts 'Enter first_name'
     first_name = gets.chomp
