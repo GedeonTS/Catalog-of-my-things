@@ -15,7 +15,9 @@
 ## Prerequisites
 - Understand Ruby basic system and linux
 - No linter errors
-  
+
+## Video link
+- (Video presentation)[https://drive.google.com/file/d/1M8U-6YQBTusXeqdgKs2aOFI9UGJoW1qX/view?usp=sharing]
 
 ## Getting Started
 
