@@ -17,7 +17,7 @@
 - No linter errors
 
 ## Video link
-- [Video Presentation](https://drive.google.com/file/d/1M8U-6YQBTusXeqdgKs2aOFI9UGJoW1qX/view?usp=sharing)
+- [Video Presentation](https://drive.google.com/file/d/1ZhRqIkqd98e8xl1oZVckNoeE0Oqp-DLz/view?usp=sharing)
 ## Getting Started
 
 Clone the project, make sure you have ruby installed and you are good to go:
