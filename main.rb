@@ -99,7 +99,7 @@ class Main
     p '!!!Catalog of things App!!!'
     puts
     input = nil
-    while input != 10
+    while input != 11
       puts 'Please choose an option by entrering a number: '
       options1
       print '[Input number]: '
