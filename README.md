@@ -1,50 +1,64 @@
+# Catalog of my things
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> Description of the project.
-
+> In this project, we created console app that helps users to keep a record of different types of things we won: books, music albums, movies, and games. Everything is stored on a JSON file and can be retrieved even after the user exit from the application.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- **Ruby**
 
-## Live Demo (if available)
+## Setup
 
-[Live Demo Link](https://livedemo.com)
+- Install Ruby in local envinronment.
+- Run program(irb) using the command line
 
+## Prerequisites
+- Understand Ruby basic system and linux
+- No linter errors
 
+## Video link
+- [Video Presentation](https://drive.google.com/file/d/1ZhRqIkqd98e8xl1oZVckNoeE0Oqp-DLz/view?usp=sharing)
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+Clone the project, make sure you have ruby installed and you are good to go:
 
+```
+   git clone https://github.com/GedeonTS/Ruby-capstone-project.git
+   ``` 
 
-To get a local copy up and running follow these simple example steps.
+To view the project directory
 
-### Prerequisites
+```
+   cd School-library
+   ```
 
-### Setup
+Install the necessary packages
 
-### Install
+```
+  bundle install
+  
+  gem install rubocop
 
-### Usage
+```
+To run the code
 
-### Run tests
+```
+main
+```
 
-### Deployment
+Check for linter errors
 
+```
+rubocop
+```
 
+## Author
 
-## Authors
+👤 **Victor Damola**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@V0pe](https://github.com/V0pe)
+- Twitter: [@de_vope_](https://twitter.com/de_vope)
+- LinkedIn: [Victor Damola](https://linkedin.com/in/victor-damola-aderibigbe-27931ab0)
 
 👤 **Eric Mahare**
 
@@ -52,11 +66,18 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@erikmahare](https://twitter.com/erikmahare) 
 - LinkedIn: [Eric Mahare](https://www.linkedin.com/in/eric-mahare-358944183/) 
 
+👤 **Gedeon Ushindi**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/V0pe/School-library/issues).
 
 ## Show your support
 
@@ -64,9 +85,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse community
+
 
 ## 📝 License
 
